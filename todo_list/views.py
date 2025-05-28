@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from .models import Todo
 
 # Create your views here.
 def home(request):
-    return render(request, 'home.html', {})
+    todos = Todo.objects.all
+    return render(request, 'home.html', todos)
 
 def about(request):
-    return render(request, 'about.html', {})
+    context = {'name': 'Hugo Loiola', 'age': '22'}
+    return render(request, 'about.html', context)
