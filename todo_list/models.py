@@ -7,4 +7,4 @@ class Todo(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.title + ' | ' + str(self.isCompleted) + ' | ' + self.created_at.strftime("%d/%m/%Y")
+        return self.title + ' | ' + str(self.isCompleted) + ' | ' + self.created_at.strftime("%d/%m/%Y %H:%M:%S")

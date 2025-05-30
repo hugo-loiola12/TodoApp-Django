@@ -3,7 +3,11 @@ from .models import Todo
 
 # Create your views here.
 def home(request):
-    todos = Todo.objects.all
+    todos = {
+        'todos': Todo.objects.all(),
+        'title': 'Todo List',
+        'description': 'A simple todo list application'
+    }
     return render(request, 'home.html', todos)
 
 def about(request):

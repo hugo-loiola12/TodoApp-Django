@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+<h1>Todo List</h1>
+{% if todos %}
+<ul>
+  {% for todo in todos %}
+  <li>{{ todo.title }} - {{ todo.isCompleted }} - {{ todo.created_at }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>No todos available.</p>
+{% endif %} {% endblock %}
