@@ -3,12 +3,8 @@ from .models import Todo
 
 # Create your views here.
 def home(request):
-    todos = {
-        'todos': Todo.objects.all(),
-        'title': 'Todo List',
-        'description': 'A simple todo list application'
-    }
-    return render(request, 'home.html', todos)
+    todos = Todo.objects.all()
+    return render(request, 'home.html', {'todos': todos})
 
 def about(request):
     context = {'name': 'Hugo Loiola', 'age': '22'}
